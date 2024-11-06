@@ -25,3 +25,6 @@ C:\Users\HANCER MERCEDE\RiderProjects\BudgetApp\BudgetApp\obj\Release\net8.0-win
 C:\Users\HANCER MERCEDE\RiderProjects\BudgetApp\BudgetApp\obj\Release\net8.0-windows\BudgetApp.pdb
 C:\Users\HANCER MERCEDE\RiderProjects\BudgetApp\BudgetApp\obj\Release\net8.0-windows\BudgetApp.genruntimeconfig.cache
 C:\Users\HANCER MERCEDE\RiderProjects\BudgetApp\BudgetApp\obj\Release\net8.0-windows\ref\BudgetApp.dll
+C:\Users\HANCER MERCEDE\RiderProjects\BudgetApp\BudgetApp\bin\Release\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\HANCER MERCEDE\RiderProjects\BudgetApp\BudgetApp\bin\Release\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\HANCER MERCEDE\RiderProjects\BudgetApp\BudgetApp\bin\Release\net8.0-windows\Microsoft.Extensions.Primitives.dll

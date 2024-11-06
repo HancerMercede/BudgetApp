@@ -11,16 +11,19 @@ namespace BudgetApp;
 public partial class BudgetApp : Form
 {
     private readonly BudgetService _budgetService;
+    private readonly int _month;
     public BudgetApp()
     {
         InitializeComponent();
         _budgetService = new BudgetService();
+         _month = DateTime.Now.Month;
     }
 
     private void BudgetApp_Load(object sender, EventArgs e)
     {
-        GetAll(0);
-        DisableButtonWhenFieldsAreEmpty();
+        
+        GetAll(_month);
+        ValidateFields();
     }
 
     private void GetAll(int value)
@@ -65,15 +68,23 @@ public partial class BudgetApp : Form
     }
     private void CreateRecord()
     {
-        var budget = new BudGetEntity()
+        if (ValidateFields())
         {
-            Description = txtDescription.Text,
-            Amount = Convert.ToDecimal(txtAmount.Text),
-            SpendingDate = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString()),
-            IdCategory = cmbCategories?.SelectedValue?.ToString()
-        };
+            var budget = new BudGetEntity()
+            {
+                Description = txtDescription.Text,
+                Amount = Convert.ToDecimal(txtAmount.Text),
+                SpendingDate = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString()),
+                IdCategory = cmbCategories?.SelectedValue?.ToString()
+            };
 
-        _budgetService.Create(budget);
+            _budgetService.Create(budget);
+        }
+        else
+        {
+            MessageBox.Show("Please fill all fields");
+        }
+      
     }
 
     private void CalculateTotalAmount()
@@ -89,17 +100,19 @@ public partial class BudgetApp : Form
     private void btnSave_Click(object sender, EventArgs e)
     {
         CreateRecord();
-        GetAll(0);
+        GetAll(_month);
     }
 
-    private void DisableButtonWhenFieldsAreEmpty()
+    private bool ValidateFields()
     {
         if (string.IsNullOrWhiteSpace(txtDescription.Text) || string.IsNullOrWhiteSpace(txtAmount.Text))
         {
             btnSave.Enabled = false;
+            return false;
         }
-        else
-            btnSave.Enabled = true;
+        btnSave.Enabled = true;
+        return true;
+
     }
 
     private void txtDescription_TextChanged(object sender, EventArgs e)
@@ -115,6 +128,6 @@ public partial class BudgetApp : Form
 
     private void btnRefresh_Click(object sender, EventArgs e)
     {
-        GetAll(0);
+        GetAll(_month);
     }
 }

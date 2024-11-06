@@ -6,6 +6,9 @@ C:\Users\HANCER MERCEDE\Applications\BudgetApp\BudgetApp.pdb
 C:\Users\HANCER MERCEDE\Applications\BudgetApp\Dapper.dll
 C:\Users\HANCER MERCEDE\Applications\BudgetApp\Mapster.dll
 C:\Users\HANCER MERCEDE\Applications\BudgetApp\Mapster.Core.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\Microsoft.Extensions.Configuration.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\Microsoft.Extensions.Primitives.dll
 C:\Users\HANCER MERCEDE\Applications\BudgetApp\System.Data.SqlClient.dll
 C:\Users\HANCER MERCEDE\Applications\BudgetApp\runtimes\win-arm64\native\sni.dll
 C:\Users\HANCER MERCEDE\Applications\BudgetApp\runtimes\win-x64\native\sni.dll
