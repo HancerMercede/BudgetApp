@@ -1,8 +1,9 @@
-﻿namespace BudgetApp.Repository;
+﻿using System.Configuration;
+
+namespace BudgetApp.Repository;
 
 public static class ConnectionString
 {
-    public const string? Connection =
-        "Data Source=Hancer-pc; Initial Catalog=BudgetDatabase; Integrated Security = True; Encrypt=false";
+    public static readonly string? Connection = "Data Source=Hancer-pc; Initial Catalog=BudgetDatabase; Integrated Security = True; Encrypt=false";
 }
 

@@ -29,10 +29,11 @@ partial class BudgetApp
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
         panel1 = new Panel();
+        btnRefresh = new Button();
         groupBox1 = new GroupBox();
         btnFilter = new Button();
         cmbMonths = new ComboBox();
@@ -46,20 +47,21 @@ partial class BudgetApp
         lblDescription = new Label();
         txtDescription = new TextBox();
         panelPrincipal = new Panel();
-        dgvSpendings = new DataGridView();
         groupBox2 = new GroupBox();
         lblTotalAmount = new Label();
         label1 = new Label();
+        dgvSpendings = new DataGridView();
         panel1.SuspendLayout();
         groupBox1.SuspendLayout();
         panelPrincipal.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)dgvSpendings).BeginInit();
         groupBox2.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)dgvSpendings).BeginInit();
         SuspendLayout();
         // 
         // panel1
         // 
         panel1.BackColor = Color.FromArgb(118, 215, 196);
+        panel1.Controls.Add(btnRefresh);
         panel1.Controls.Add(groupBox1);
         panel1.Controls.Add(lblCategory);
         panel1.Controls.Add(cmbCategories);
@@ -75,6 +77,19 @@ partial class BudgetApp
         panel1.Name = "panel1";
         panel1.Size = new Size(294, 426);
         panel1.TabIndex = 0;
+        // 
+        // btnRefresh
+        // 
+        btnRefresh.BackColor = Color.FromArgb(247, 220, 111);
+        btnRefresh.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        btnRefresh.ForeColor = Color.Black;
+        btnRefresh.Location = new Point(186, 241);
+        btnRefresh.Name = "btnRefresh";
+        btnRefresh.Size = new Size(74, 42);
+        btnRefresh.TabIndex = 11;
+        btnRefresh.Text = "REFRESH";
+        btnRefresh.UseVisualStyleBackColor = false;
+        btnRefresh.Click += btnRefresh_Click;
         // 
         // groupBox1
         // 
@@ -133,12 +148,11 @@ partial class BudgetApp
         // btnSave
         // 
         btnSave.BackColor = Color.FromArgb(52, 152, 219);
-        btnSave.FlatStyle = FlatStyle.Flat;
         btnSave.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
         btnSave.ForeColor = Color.White;
         btnSave.Location = new Point(25, 241);
         btnSave.Name = "btnSave";
-        btnSave.Size = new Size(235, 42);
+        btnSave.Size = new Size(155, 42);
         btnSave.TabIndex = 7;
         btnSave.Text = "SAVE";
         btnSave.UseVisualStyleBackColor = false;
@@ -210,51 +224,6 @@ partial class BudgetApp
         panelPrincipal.Size = new Size(578, 426);
         panelPrincipal.TabIndex = 1;
         // 
-        // dgvSpendings
-        // 
-        dgvSpendings.AllowUserToAddRows = false;
-        dgvSpendings.AllowUserToDeleteRows = false;
-        dgvSpendings.AllowUserToResizeColumns = false;
-        dgvSpendings.AllowUserToResizeRows = false;
-        dgvSpendings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        dgvSpendings.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-        dgvSpendings.BackgroundColor = Color.White;
-        dgvSpendings.BorderStyle = BorderStyle.None;
-        dgvSpendings.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-        dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle10.BackColor = Color.FromArgb(174, 214, 241);
-        dataGridViewCellStyle10.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-        dgvSpendings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-        dgvSpendings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvSpendings.Cursor = Cursors.Hand;
-        dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle11.BackColor = SystemColors.Window;
-        dataGridViewCellStyle11.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-        dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-        dgvSpendings.DefaultCellStyle = dataGridViewCellStyle11;
-        dgvSpendings.Location = new Point(6, 42);
-        dgvSpendings.Name = "dgvSpendings";
-        dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle12.BackColor = SystemColors.Control;
-        dataGridViewCellStyle12.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
-        dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-        dgvSpendings.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-        dgvSpendings.RowHeadersVisible = false;
-        dgvSpendings.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        dgvSpendings.Size = new Size(560, 304);
-        dgvSpendings.TabIndex = 0;
-        dgvSpendings.TabStop = false;
-        // 
         // groupBox2
         // 
         groupBox2.Controls.Add(lblTotalAmount);
@@ -287,6 +256,51 @@ partial class BudgetApp
         label1.TabIndex = 3;
         label1.Text = "TOTAL";
         // 
+        // dgvSpendings
+        // 
+        dgvSpendings.AllowUserToAddRows = false;
+        dgvSpendings.AllowUserToDeleteRows = false;
+        dgvSpendings.AllowUserToResizeColumns = false;
+        dgvSpendings.AllowUserToResizeRows = false;
+        dgvSpendings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvSpendings.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        dgvSpendings.BackgroundColor = Color.White;
+        dgvSpendings.BorderStyle = BorderStyle.None;
+        dgvSpendings.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+        dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle1.BackColor = Color.FromArgb(174, 214, 241);
+        dataGridViewCellStyle1.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+        dgvSpendings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+        dgvSpendings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvSpendings.Cursor = Cursors.Hand;
+        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle2.BackColor = SystemColors.Window;
+        dataGridViewCellStyle2.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+        dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+        dgvSpendings.DefaultCellStyle = dataGridViewCellStyle2;
+        dgvSpendings.Location = new Point(6, 42);
+        dgvSpendings.Name = "dgvSpendings";
+        dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dataGridViewCellStyle3.BackColor = SystemColors.Control;
+        dataGridViewCellStyle3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+        dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+        dgvSpendings.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+        dgvSpendings.RowHeadersVisible = false;
+        dgvSpendings.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        dgvSpendings.Size = new Size(560, 304);
+        dgvSpendings.TabIndex = 0;
+        dgvSpendings.TabStop = false;
+        // 
         // BudgetApp
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
@@ -303,9 +317,9 @@ partial class BudgetApp
         panel1.PerformLayout();
         groupBox1.ResumeLayout(false);
         panelPrincipal.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)dgvSpendings).EndInit();
         groupBox2.ResumeLayout(false);
         groupBox2.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)dgvSpendings).EndInit();
         ResumeLayout(false);
     }
 
@@ -329,4 +343,5 @@ partial class BudgetApp
     private GroupBox groupBox2;
     private Label lblTotalAmount;
     private Label label1;
+    private Button btnRefresh;
 }

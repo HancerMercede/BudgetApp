@@ -25,11 +25,11 @@ public partial class BudgetApp : Form
 
     private void GetAll(int value)
     {
-        var spendingns = _budgetService.GetAll(value);
-        var spendingsDto = spendingns.Adapt<IEnumerable<DisplayBudgetToClient>>();
+        var spendings = _budgetService.GetAll(value);
+        var spendingsDto = spendings.Adapt<IEnumerable<DisplayBudgetToClient>>();
         dgvSpendings.DataSource = spendingsDto.ToList();
-        dgvSpendings.Columns["CategoryName"].HeaderText = "Category";
-        dgvSpendings.Columns["SpendingDate"].HeaderText = "Date";
+        dgvSpendings.Columns["CategoryName"]!.HeaderText = @"Category";
+        dgvSpendings.Columns["SpendingDate"]!.HeaderText = @"Date";
         CalculateTotalAmount();
         GetCategories();
         GetMonths();
@@ -111,5 +111,10 @@ public partial class BudgetApp : Form
     {
         var value = Convert.ToInt32(cmbMonths.SelectedValue);
         GetAll(value);
+    }
+
+    private void btnRefresh_Click(object sender, EventArgs e)
+    {
+        GetAll(0);
     }
 }
