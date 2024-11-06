@@ -1,0 +1,14 @@
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\BudgetApp.exe
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\BudgetApp.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\BudgetApp.deps.json
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\BudgetApp.runtimeconfig.json
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\BudgetApp.pdb
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\Dapper.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\Mapster.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\Mapster.Core.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\System.Data.SqlClient.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\runtimes\win-arm64\native\sni.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\runtimes\win-x64\native\sni.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\runtimes\win-x86\native\sni.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\HANCER MERCEDE\Applications\BudgetApp\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
