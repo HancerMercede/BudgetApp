@@ -32,6 +32,7 @@ partial class BudgetApp
         DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
         DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
         DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BudgetApp));
         panel1 = new Panel();
         btnRefresh = new Button();
         groupBox1 = new GroupBox();
@@ -47,6 +48,8 @@ partial class BudgetApp
         lblDescription = new Label();
         txtDescription = new TextBox();
         panelPrincipal = new Panel();
+        lblDateComplete = new Label();
+        label2 = new Label();
         groupBox2 = new GroupBox();
         lblTotalAmount = new Label();
         label1 = new Label();
@@ -81,7 +84,7 @@ partial class BudgetApp
         // btnRefresh
         // 
         btnRefresh.BackColor = Color.FromArgb(247, 220, 111);
-        btnRefresh.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        btnRefresh.Font = new Font("Century Gothic", 9.75F);
         btnRefresh.ForeColor = Color.Black;
         btnRefresh.Location = new Point(186, 241);
         btnRefresh.Name = "btnRefresh";
@@ -95,7 +98,7 @@ partial class BudgetApp
         // 
         groupBox1.Controls.Add(btnFilter);
         groupBox1.Controls.Add(cmbMonths);
-        groupBox1.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        groupBox1.Font = new Font("Century Gothic", 9.75F);
         groupBox1.Location = new Point(25, 297);
         groupBox1.Name = "groupBox1";
         groupBox1.Size = new Size(235, 117);
@@ -122,33 +125,34 @@ partial class BudgetApp
         cmbMonths.FormattingEnabled = true;
         cmbMonths.Location = new Point(18, 27);
         cmbMonths.Name = "cmbMonths";
-        cmbMonths.Size = new Size(192, 22);
+        cmbMonths.Size = new Size(192, 25);
         cmbMonths.TabIndex = 9;
         cmbMonths.Text = "Seleccione una..";
         // 
         // lblCategory
         // 
         lblCategory.AutoSize = true;
-        lblCategory.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        lblCategory.Font = new Font("Century Gothic", 9.75F);
         lblCategory.Location = new Point(28, 182);
         lblCategory.Name = "lblCategory";
-        lblCategory.Size = new Size(56, 14);
+        lblCategory.Size = new Size(69, 17);
         lblCategory.TabIndex = 9;
         lblCategory.Text = "Category";
         // 
         // cmbCategories
         // 
+        cmbCategories.Font = new Font("Century Gothic", 9.75F);
         cmbCategories.FormattingEnabled = true;
         cmbCategories.Location = new Point(26, 199);
         cmbCategories.Name = "cmbCategories";
-        cmbCategories.Size = new Size(121, 23);
+        cmbCategories.Size = new Size(121, 25);
         cmbCategories.TabIndex = 8;
         cmbCategories.Text = "Seleccione una..";
         // 
         // btnSave
         // 
         btnSave.BackColor = Color.FromArgb(52, 152, 219);
-        btnSave.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        btnSave.Font = new Font("Century Gothic", 9.75F);
         btnSave.ForeColor = Color.White;
         btnSave.Location = new Point(25, 241);
         btnSave.Name = "btnSave";
@@ -160,7 +164,7 @@ partial class BudgetApp
         // 
         // txtAmount
         // 
-        txtAmount.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        txtAmount.Font = new Font("Century Gothic", 9.75F);
         txtAmount.Location = new Point(26, 148);
         txtAmount.Name = "txtAmount";
         txtAmount.Size = new Size(121, 23);
@@ -169,53 +173,56 @@ partial class BudgetApp
         // lblAmount
         // 
         lblAmount.AutoSize = true;
-        lblAmount.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        lblAmount.Font = new Font("Century Gothic", 9.75F);
         lblAmount.Location = new Point(25, 131);
         lblAmount.Name = "lblAmount";
-        lblAmount.Size = new Size(51, 14);
+        lblAmount.Size = new Size(60, 17);
         lblAmount.TabIndex = 5;
         lblAmount.Text = "Amount";
         // 
         // dateTimePicker1
         // 
-        dateTimePicker1.CalendarFont = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        dateTimePicker1.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        dateTimePicker1.Font = new Font("Century Gothic", 9.75F);
         dateTimePicker1.Location = new Point(25, 95);
         dateTimePicker1.Name = "dateTimePicker1";
-        dateTimePicker1.Size = new Size(210, 23);
+        dateTimePicker1.Size = new Size(235, 23);
         dateTimePicker1.TabIndex = 3;
         // 
         // lblDate
         // 
         lblDate.AutoSize = true;
-        lblDate.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        lblDate.Font = new Font("Century Gothic", 9.75F);
         lblDate.Location = new Point(26, 78);
         lblDate.Name = "lblDate";
-        lblDate.Size = new Size(88, 14);
+        lblDate.Size = new Size(104, 17);
         lblDate.TabIndex = 2;
         lblDate.Text = "Spending Date";
         // 
         // lblDescription
         // 
         lblDescription.AutoSize = true;
-        lblDescription.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        lblDescription.Font = new Font("Century Gothic", 9.75F);
         lblDescription.Location = new Point(25, 24);
         lblDescription.Name = "lblDescription";
-        lblDescription.Size = new Size(67, 14);
+        lblDescription.Size = new Size(80, 17);
         lblDescription.TabIndex = 1;
         lblDescription.Text = "Description";
         // 
         // txtDescription
         // 
-        txtDescription.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        txtDescription.Font = new Font("Century Gothic", 9.75F);
         txtDescription.Location = new Point(25, 42);
         txtDescription.Name = "txtDescription";
-        txtDescription.Size = new Size(210, 23);
+        txtDescription.Size = new Size(235, 23);
         txtDescription.TabIndex = 0;
         txtDescription.TextChanged += txtDescription_TextChanged;
         // 
         // panelPrincipal
         // 
         panelPrincipal.BackColor = Color.FromArgb(52, 152, 219);
+        panelPrincipal.Controls.Add(lblDateComplete);
+        panelPrincipal.Controls.Add(label2);
         panelPrincipal.Controls.Add(groupBox2);
         panelPrincipal.Controls.Add(dgvSpendings);
         panelPrincipal.Dock = DockStyle.Fill;
@@ -223,6 +230,28 @@ partial class BudgetApp
         panelPrincipal.Name = "panelPrincipal";
         panelPrincipal.Size = new Size(578, 426);
         panelPrincipal.TabIndex = 1;
+        // 
+        // lblDateComplete
+        // 
+        lblDateComplete.AutoSize = true;
+        lblDateComplete.Font = new Font("Century Gothic", 14.25F);
+        lblDateComplete.ForeColor = Color.White;
+        lblDateComplete.Location = new Point(114, 9);
+        lblDateComplete.Name = "lblDateComplete";
+        lblDateComplete.Size = new Size(147, 22);
+        lblDateComplete.TabIndex = 5;
+        lblDateComplete.Text = "DateComplete";
+        // 
+        // label2
+        // 
+        label2.AutoSize = true;
+        label2.Font = new Font("Century Gothic", 14.25F);
+        label2.ForeColor = Color.White;
+        label2.Location = new Point(6, 9);
+        label2.Name = "label2";
+        label2.Size = new Size(115, 22);
+        label2.TabIndex = 4;
+        label2.Text = "Spendigs of";
         // 
         // groupBox2
         // 
@@ -249,10 +278,10 @@ partial class BudgetApp
         // label1
         // 
         label1.AutoSize = true;
-        label1.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
         label1.Location = new Point(11, 23);
         label1.Name = "label1";
-        label1.Size = new Size(73, 23);
+        label1.Size = new Size(64, 23);
         label1.TabIndex = 3;
         label1.Text = "TOTAL";
         // 
@@ -268,9 +297,9 @@ partial class BudgetApp
         dgvSpendings.BorderStyle = BorderStyle.None;
         dgvSpendings.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
         dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        dataGridViewCellStyle1.BackColor = Color.FromArgb(174, 214, 241);
-        dataGridViewCellStyle1.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle1.BackColor = Color.FromArgb(118, 215, 196);
+        dataGridViewCellStyle1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        dataGridViewCellStyle1.ForeColor = Color.White;
         dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
         dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
         dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
@@ -279,12 +308,13 @@ partial class BudgetApp
         dgvSpendings.Cursor = Cursors.Hand;
         dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
         dataGridViewCellStyle2.BackColor = SystemColors.Window;
-        dataGridViewCellStyle2.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
         dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
         dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
         dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
         dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
         dgvSpendings.DefaultCellStyle = dataGridViewCellStyle2;
+        dgvSpendings.EnableHeadersVisualStyles = false;
         dgvSpendings.Location = new Point(6, 42);
         dgvSpendings.Name = "dgvSpendings";
         dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -308,7 +338,8 @@ partial class BudgetApp
         ClientSize = new Size(872, 426);
         Controls.Add(panelPrincipal);
         Controls.Add(panel1);
-        FormBorderStyle = FormBorderStyle.FixedToolWindow;
+        FormBorderStyle = FormBorderStyle.SizableToolWindow;
+        Icon = (Icon)resources.GetObject("$this.Icon");
         Name = "BudgetApp";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "Buget Application";
@@ -317,6 +348,7 @@ partial class BudgetApp
         panel1.PerformLayout();
         groupBox1.ResumeLayout(false);
         panelPrincipal.ResumeLayout(false);
+        panelPrincipal.PerformLayout();
         groupBox2.ResumeLayout(false);
         groupBox2.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)dgvSpendings).EndInit();
@@ -344,4 +376,6 @@ partial class BudgetApp
     private Label lblTotalAmount;
     private Label label1;
     private Button btnRefresh;
+    private Label lblDateComplete;
+    private Label label2;
 }

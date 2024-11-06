@@ -21,7 +21,7 @@ public partial class BudgetApp : Form
 
     private void BudgetApp_Load(object sender, EventArgs e)
     {
-        
+        lblDateComplete.Text = DateTime.Now.ToString("MMMM-yyyy");
         GetAll(_month);
         ValidateFields();
     }
@@ -79,10 +79,11 @@ public partial class BudgetApp : Form
             };
 
             _budgetService.Create(budget);
+            ClearFields();
         }
         else
         {
-            MessageBox.Show("Please fill all fields");
+            MessageBox.Show("The fields cannot be empty, please verify.", "Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
       
     }
@@ -95,6 +96,13 @@ public partial class BudgetApp : Form
             sum += Convert.ToDouble(dgvSpendings.Rows[i].Cells[2].Value);
         }
         lblTotalAmount.Text = sum.ToString(CultureInfo.InvariantCulture);
+    }
+
+    private void ClearFields()
+    {
+        txtDescription.Text = string.Empty;
+        txtAmount.Text = string.Empty;
+        txtDescription.Focus();
     }
 
     private void btnSave_Click(object sender, EventArgs e)
@@ -112,7 +120,6 @@ public partial class BudgetApp : Form
         }
         btnSave.Enabled = true;
         return true;
-
     }
 
     private void txtDescription_TextChanged(object sender, EventArgs e)
@@ -129,5 +136,6 @@ public partial class BudgetApp : Form
     private void btnRefresh_Click(object sender, EventArgs e)
     {
         GetAll(_month);
+        ClearFields();
     }
 }
